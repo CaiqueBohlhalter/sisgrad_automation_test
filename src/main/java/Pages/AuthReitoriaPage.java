@@ -1,14 +1,17 @@
 package Pages;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-public class ReitoriaAuthPage {
+import org.openqa.selenium.support.PageFactory;
+
+public class AuthReitoriaPage {
     private static final String PAGE_TITLE = "UNESP : Sistemas";
+    private static final String PAGE_URL = "https://sistemas.unesp.br/acesso/";
     WebDriver driver;
 
-    public ReitoriaAuthPage(WebDriver driver){
+    public AuthReitoriaPage(WebDriver driver){
         this.driver = driver;
-        driver.get("https://sistemas.unesp.br/acesso/");
+        driver.get(PAGE_URL);
+        PageFactory.initElements(driver, this);
     }
 
     private String getPageTitle(){
