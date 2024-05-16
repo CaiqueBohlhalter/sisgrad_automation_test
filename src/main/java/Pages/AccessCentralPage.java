@@ -1,6 +1,5 @@
 package Pages;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -23,7 +22,7 @@ public class AccessCentralPage {
     WebElement dialogAcceptButton;
     @FindBy(xpath = "/html/body/div[4]/md-dialog/md-dialog-actions/button[1]")
     WebElement dialogRefuseButton;
-    @FindBy(xpath = "//*[@id=\"content\"]/md-content/div[2]/md-list/md-list-item[4]/div/a")
+    @FindBy(xpath = "//*[@id=\"content\"]/md-content/div[2]/md-list/md-list-item[5]/div/a")
     WebElement sisgradButton;
 
     public AccessCentralPage(WebDriver driver){
