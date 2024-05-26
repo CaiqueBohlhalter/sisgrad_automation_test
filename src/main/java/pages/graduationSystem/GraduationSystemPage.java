@@ -1,4 +1,4 @@
-package Pages;
+package pages.graduationSystem;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -28,6 +28,9 @@ public class GraduationSystemPage {
 
     @FindBy(xpath = "//*[@id=\"menuesq\"]/li[1]/ul/li[4]/a")
     WebElement meusDadosHistoricoEscolar;
+
+    @FindBy(xpath = "//*[@id=\"menuesq\"]/li[1]/ul/li[5]/a")
+    WebElement meusDadosIntegCurricular;
 
     @FindBy(xpath = "//*[@id=\"menuesq\"]/li[4]/a")
     WebElement solicitacoes;
@@ -97,6 +100,11 @@ public class GraduationSystemPage {
     public void clickHistoricoEscolar(){
         hoverOverMeusDadosMenu();
         meusDadosHistoricoEscolar.click();
+    }
+
+    public void clickIntegracaoCurricular(){
+        hoverOverMeusDadosMenu();
+        meusDadosIntegCurricular.click();
     }
 
     public void clickSolicitacoesDocumentosNovaSolicitacao(){

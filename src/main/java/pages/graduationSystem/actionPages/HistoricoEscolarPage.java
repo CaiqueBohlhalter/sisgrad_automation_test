@@ -1,4 +1,4 @@
-package Pages;
+package pages.graduationSystem.actionPages;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -9,10 +9,10 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-public class MensagensEnviadasPage {
+public class HistoricoEscolarPage {
     private static final String PAGE_TITLE = ":: UNESP : Câmpus de Rio Claro ::";
-    private static final String PAGE_URL = "https://sistemas.unesp.br/academico/mensagem.listar.action?emailTipo=enviadas";
-    private static final String DEFAULT_TITLE = "Mensagens enviadas";
+    private static final String PAGE_URL = "https://sistemas.unesp.br/academico/aluno/cadastro.historicoEscolar.action";
+    private static final String DEFAULT_TITLE = "Histórico Escolar";
 
     WebDriver driver;
     WebDriverWait wait;
@@ -20,7 +20,7 @@ public class MensagensEnviadasPage {
     @FindBy(xpath = "//*[@id=\"ct\"]/h2")
     WebElement title;
 
-    public MensagensEnviadasPage(WebDriver driver){
+    public HistoricoEscolarPage(WebDriver driver){
         this.driver = driver;
         driver.get(PAGE_URL);
         PageFactory.initElements(driver, this);
@@ -38,5 +38,4 @@ public class MensagensEnviadasPage {
         }
         return false;
     }
-
 }

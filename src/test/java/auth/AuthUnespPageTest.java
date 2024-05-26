@@ -1,6 +1,7 @@
+package auth;
 
-import Pages.AccessCentralPage;
-import Pages.AuthUnespPage;
+import pages.centralPage.AccessCentralPage;
+import pages.authPages.AuthUnespPage;
 import io.github.cdimascio.dotenv.Dotenv;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
@@ -10,7 +11,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
-import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
 public class AuthUnespPageTest {

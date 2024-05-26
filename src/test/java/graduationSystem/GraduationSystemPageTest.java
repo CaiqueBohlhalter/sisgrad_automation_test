@@ -1,4 +1,10 @@
-import Pages.*;
+package graduationSystem;
+
+import pages.centralPage.AccessCentralPage;
+import pages.graduationSystem.*;
+import pages.graduationSystem.actionPages.*;
+import pages.authPages.AuthUnespPage;
+import pages.authPages.HomePage;
 import io.github.cdimascio.dotenv.Dotenv;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.WebDriver;
@@ -62,6 +68,16 @@ public class GraduationSystemPageTest {
 
         HistoricoEscolarPage historicoEscolarPage = new HistoricoEscolarPage(driver);
         Assertions.assertTrue(historicoEscolarPage.isCorrectPage());
+    }
+
+    @Test
+    public void shouldAccessIntegracaoCurricularPageTest() {
+        GraduationSystemPage graduationSystemPage = accessGraduationSystemPage();
+
+        graduationSystemPage.clickIntegracaoCurricular();
+
+        IntegralizacaoCurricularPage integralizacaoCurricularPage = new IntegralizacaoCurricularPage(driver);
+        Assertions.assertTrue(integralizacaoCurricularPage.isCorrectPage());
     }
 
     @Test

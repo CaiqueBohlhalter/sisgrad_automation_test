@@ -1,6 +1,8 @@
-import Pages.AccessCentralPage;
-import Pages.AuthUnespPage;
-import Pages.HomePage;
+package central;
+
+import pages.centralPage.AccessCentralPage;
+import pages.authPages.AuthUnespPage;
+import pages.authPages.HomePage;
 import io.github.cdimascio.dotenv.Dotenv;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.Assertions;

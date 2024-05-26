@@ -1,4 +1,4 @@
-package Pages;
+package pages.graduationSystem.actionPages;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -9,10 +9,10 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-public class FrequenciasENotasPage {
+public class MensagensRecebidasPage {
     private static final String PAGE_TITLE = ":: UNESP : Câmpus de Rio Claro ::";
-    private static final String PAGE_URL = "https://sistemas.unesp.br/academico/aluno/cadastro.frequenciasNotas.action";
-    private static final String DEFAULT_TITLE = "Frequências e Notas";
+    private static final String PAGE_URL = "https://sistemas.unesp.br/academico/mensagem.listar.action?emailTipo=recebidas";
+    private static final String DEFAULT_TITLE = "Mensagens recebidas";
 
     WebDriver driver;
     WebDriverWait wait;
@@ -20,7 +20,7 @@ public class FrequenciasENotasPage {
     @FindBy(xpath = "//*[@id=\"ct\"]/h2")
     WebElement title;
 
-    public FrequenciasENotasPage(WebDriver driver){
+    public MensagensRecebidasPage(WebDriver driver){
         this.driver = driver;
         driver.get(PAGE_URL);
         PageFactory.initElements(driver, this);
@@ -38,4 +38,5 @@ public class FrequenciasENotasPage {
         }
         return false;
     }
+
 }

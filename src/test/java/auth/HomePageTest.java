@@ -1,6 +1,8 @@
-import Pages.AuthUnespPage;
-import Pages.HomePage;
-import Pages.AuthReitoriaPage;
+package auth;
+
+import pages.authPages.AuthUnespPage;
+import pages.authPages.HomePage;
+import pages.authPages.AuthReitoriaPage;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;

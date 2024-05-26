@@ -1,4 +1,4 @@
-package Pages;
+package pages.graduationSystem.actionPages;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -9,10 +9,10 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-public class HorarioAulasPage {
+public class FrequenciasENotasPage {
     private static final String PAGE_TITLE = ":: UNESP : Câmpus de Rio Claro ::";
-    private static final String PAGE_URL = "https://sistemas.unesp.br/academico/aluno/cadastro.horarioAulas.action";
-    private static final String DEFAULT_TITLE = "Horário de aulas";
+    private static final String PAGE_URL = "https://sistemas.unesp.br/academico/aluno/cadastro.frequenciasNotas.action";
+    private static final String DEFAULT_TITLE = "Frequências e Notas";
 
     WebDriver driver;
     WebDriverWait wait;
@@ -20,7 +20,7 @@ public class HorarioAulasPage {
     @FindBy(xpath = "//*[@id=\"ct\"]/h2")
     WebElement title;
 
-    public HorarioAulasPage(WebDriver driver){
+    public FrequenciasENotasPage(WebDriver driver){
         this.driver = driver;
         driver.get(PAGE_URL);
         PageFactory.initElements(driver, this);
@@ -38,5 +38,4 @@ public class HorarioAulasPage {
         }
         return false;
     }
-
 }
