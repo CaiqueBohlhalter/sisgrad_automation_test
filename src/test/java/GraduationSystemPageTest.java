@@ -64,6 +64,36 @@ public class GraduationSystemPageTest {
         Assertions.assertTrue(historicoEscolarPage.isCorrectPage());
     }
 
+    @Test
+    public void shouldAccessNovaSolicitacaoDocumentosPageTest() {
+        GraduationSystemPage graduationSystemPage = accessGraduationSystemPage();
+
+        graduationSystemPage.clickSolicitacoesDocumentosNovaSolicitacao();
+
+        SolicitacoesDocumentosPage solicitacoesDocumentosPage = new SolicitacoesDocumentosPage(driver);
+        Assertions.assertTrue(solicitacoesDocumentosPage.isCorrectPage());
+    }
+
+    @Test
+    public void shouldAccessMensagensRecebidasPageTest() {
+        GraduationSystemPage graduationSystemPage = accessGraduationSystemPage();
+
+        graduationSystemPage.clickMensagensRecebidas();
+
+        MensagensRecebidasPage mensagensRecebidasPage = new MensagensRecebidasPage(driver);
+        Assertions.assertTrue(mensagensRecebidasPage.isCorrectPage());
+    }
+
+    @Test
+    public void shouldAccessMensagensEnviadasPageTest() {
+        GraduationSystemPage graduationSystemPage = accessGraduationSystemPage();
+
+        graduationSystemPage.clickMensagensEnviadas();
+
+        MensagensEnviadasPage mensagensEnviadasPage = new MensagensEnviadasPage(driver);
+        Assertions.assertTrue(mensagensEnviadasPage.isCorrectPage());
+    }
+
     private static void login() throws InterruptedException {
         HomePage homePage = new HomePage(driver);
         Assertions.assertTrue(homePage.isCorrectPage());

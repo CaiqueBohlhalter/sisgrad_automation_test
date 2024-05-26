@@ -20,18 +20,6 @@ public class GraduationSystemPage {
     @FindBy(xpath = "//*[@id=\"menuesq\"]/li[1]/a")
     WebElement meusDados;
 
-    @FindBy(xpath = "//*[@id=\"menuesq\"]/li[4]/a")
-    WebElement solicitacoes;
-
-    @FindBy(xpath = "//*[@id=\"menuesq\"]/li[9]/a")
-    WebElement mensagens;
-
-    @FindBy(xpath = "//*[@id=\"menuesq\"]/li[4]/ul/li[3]/a")
-    WebElement solicitacoesDocumentos;
-
-    @FindBy(xpath = "//*[@id=\"menuesq\"]/li[4]/ul/li[3]/ul/li[1]/a")
-    WebElement solicitacoesDocumentosNovaSolicitacao;
-
     @FindBy(xpath = "//*[@id=\"menuesq\"]/li[1]/ul/li[2]/a")
     WebElement meusDadosHorarioAula;
 
@@ -40,6 +28,24 @@ public class GraduationSystemPage {
 
     @FindBy(xpath = "//*[@id=\"menuesq\"]/li[1]/ul/li[4]/a")
     WebElement meusDadosHistoricoEscolar;
+
+    @FindBy(xpath = "//*[@id=\"menuesq\"]/li[4]/a")
+    WebElement solicitacoes;
+
+    @FindBy(xpath = "//*[@id=\"menuesq\"]/li[4]/ul/li[3]/a")
+    WebElement solicitacoesDocumentos;
+
+    @FindBy(xpath = "//*[@id=\"menuesq\"]/li[4]/ul/li[3]/ul/li[1]/a")
+    WebElement solicitacoesDocumentosNovaSolicitacao;
+
+    @FindBy(xpath = "//*[@id=\"menuesq\"]/li[9]/a")
+    WebElement mensagens;
+
+    @FindBy(xpath = "//*[@id=\"menuesq\"]/li[9]/ul/li[1]/a")
+    WebElement mensagensRecebidas;
+
+    @FindBy(xpath = "//*[@id=\"menuesq\"]/li[9]/ul/li[2]/a")
+    WebElement mensagensEnviadas;
 
     public GraduationSystemPage(WebDriver driver){
         this.driver = driver;
@@ -96,5 +102,15 @@ public class GraduationSystemPage {
     public void clickSolicitacoesDocumentosNovaSolicitacao(){
         hoverOverSolicitacoesDocumentosMenu();
         solicitacoesDocumentosNovaSolicitacao.click();
+    }
+
+    public void clickMensagensRecebidas(){
+        hoverOverMensagensMenu();
+        mensagensRecebidas.click();
+    }
+
+    public void clickMensagensEnviadas(){
+        hoverOverMensagensMenu();
+        mensagensEnviadas.click();
     }
 }
