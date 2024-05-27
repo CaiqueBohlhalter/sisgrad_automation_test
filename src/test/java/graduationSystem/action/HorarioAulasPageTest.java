@@ -1,7 +1,10 @@
-package graduationSystem;
+package graduationSystem.action;
 
 import io.github.cdimascio.dotenv.Dotenv;
-import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -9,13 +12,14 @@ import pages.authPages.AuthUnespPage;
 import pages.authPages.HomePage;
 import pages.centralPage.AccessCentralPage;
 import pages.graduationSystem.GraduationSystemPage;
-import pages.graduationSystem.actionPages.*;
+import pages.graduationSystem.actionPages.HorarioAulasPage;
+import pages.graduationSystem.actionPages.IntegralizacaoCurricularPage;
 
 import java.util.concurrent.TimeUnit;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class IntegralizacaoCurricularTest {
+public class HorarioAulasPageTest {
     private static final String ACCESS_PAGE_URL = "https://sistemas.unesp.br/central/#/sistemas";
     private static final String UNESP_ID = Dotenv.load().get("UNESP_PERSONAL_ID");
     private static final String UNESP_PASS = Dotenv.load().get("UNESP_PERSONAL_PASS");
@@ -39,14 +43,14 @@ public class IntegralizacaoCurricularTest {
 
     @Test
     public void shouldShowUserIdentificationTest() {
-        IntegralizacaoCurricularPage integralizacaoCurricularPage = accessPage();
-        assertTrue(integralizacaoCurricularPage.isCorrectIdentificationShown());
+        HorarioAulasPage horarioAulasPage = accessPage();
+        assertTrue(horarioAulasPage.isCorrectIdentificationShown());
     }
 
     @Test
     public void shouldShowContentTablesTest() {
-        IntegralizacaoCurricularPage integralizacaoCurricularPage = accessPage();
-        assertTrue(integralizacaoCurricularPage.areAllTablesBeingShown());
+        HorarioAulasPage horarioAulasPage = accessPage();
+        assertTrue(horarioAulasPage.areAllTablesBeingShown());
     }
 
     private static void InitializeDriver(){
@@ -70,7 +74,7 @@ public class IntegralizacaoCurricularTest {
         authPage.clickLoginButton();
     }
 
-    private IntegralizacaoCurricularPage accessPage() {
+    private HorarioAulasPage accessPage() {
         AccessCentralPage accessCentralPage = new AccessCentralPage(driver);
         assertTrue(accessCentralPage.isCorrectPage());
 
@@ -81,9 +85,9 @@ public class IntegralizacaoCurricularTest {
 
         graduationSystemPage.clickIntegracaoCurricular();
 
-        IntegralizacaoCurricularPage integralizacaoCurricularPage = new IntegralizacaoCurricularPage(driver);
-        assertTrue(integralizacaoCurricularPage.isCorrectPage());
+        HorarioAulasPage horarioAulasPage = new HorarioAulasPage(driver);
+        assertTrue(horarioAulasPage.isCorrectPage());
 
-        return integralizacaoCurricularPage;
+        return horarioAulasPage;
     }
 }

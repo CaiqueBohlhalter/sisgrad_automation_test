@@ -1,5 +1,6 @@
 package pages.graduationSystem.actionPages;
 
+import io.github.cdimascio.dotenv.Dotenv;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -13,12 +14,23 @@ public class HorarioAulasPage {
     private static final String PAGE_TITLE = ":: UNESP : Câmpus de Rio Claro ::";
     private static final String PAGE_URL = "https://sistemas.unesp.br/academico/aluno/cadastro.horarioAulas.action";
     private static final String DEFAULT_TITLE = "Horário de aulas";
+    private static final String USER_FULL_NAME = Dotenv.load().get("PERSONAL_FULL_NAME");
+    private static final String USER_RA = Dotenv.load().get("PERSONAL_RA");
 
     WebDriver driver;
     WebDriverWait wait;
 
     @FindBy(xpath = "//*[@id=\"ct\"]/h2")
     WebElement title;
+
+    @FindBy(xpath = "//*[@id=\"cc\"]/div")
+    WebElement infoMsg;
+
+    @FindBy(xpath = "//*[@id=\"cc\"]/table[1]")
+    WebElement currentClassesTable;
+
+    @FindBy(xpath = "//*[@id=\"cc\"]/table[2]")
+    WebElement listagemQuadroTable;
 
     public HorarioAulasPage(WebDriver driver){
         this.driver = driver;
@@ -38,5 +50,19 @@ public class HorarioAulasPage {
         }
         return false;
     }
+
+    public Boolean isCorrectIdentificationShown() {
+        return (infoMsg.getText().contains(USER_FULL_NAME) && infoMsg.getText().contains(USER_RA));
+    }
+
+    public Boolean areAllTablesBeingShown() {
+        return (isCurrentClassesTableShown() && isListagemQuadroTableShown());
+    }
+
+    private Boolean isCurrentClassesTableShown() {
+        return currentClassesTable.isDisplayed();
+    }
+
+    private Boolean isListagemQuadroTableShown() { return listagemQuadroTable.isDisplayed(); }
 
 }
