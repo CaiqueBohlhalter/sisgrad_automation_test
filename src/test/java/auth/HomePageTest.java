@@ -4,7 +4,6 @@ import pages.authPages.AuthUnespPage;
 import pages.authPages.HomePage;
 import pages.authPages.AuthReitoriaPage;
 import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
@@ -12,6 +11,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
 import java.util.concurrent.TimeUnit;
+
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class HomePageTest {
     private static WebDriver driver;
@@ -34,7 +35,7 @@ public class HomePageTest {
         HomePage page = new HomePage(driver);
         page.clickCentralButton();
         AuthUnespPage authUnespPage = new AuthUnespPage(driver);
-        Assertions.assertTrue(authUnespPage.isCorrectPage());
+        assertTrue(authUnespPage.isCorrectPage());
     }
 
     @Test
@@ -42,6 +43,6 @@ public class HomePageTest {
         HomePage page = new HomePage(driver);
         page.clickPortalReitoriaButton();
         AuthReitoriaPage reitoriaAuthPage = new AuthReitoriaPage(driver);
-        Assertions.assertTrue(reitoriaAuthPage.isCorrectPage());
+        assertTrue(reitoriaAuthPage.isCorrectPage());
     }
 }
