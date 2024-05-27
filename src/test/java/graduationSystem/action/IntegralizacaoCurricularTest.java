@@ -40,13 +40,13 @@ public class IntegralizacaoCurricularTest {
     @Test
     public void shouldShowUserIdentificationTest() {
         IntegralizacaoCurricularPage integralizacaoCurricularPage = accessPage();
-        assertTrue(integralizacaoCurricularPage.isCorrectIdentificationShown());
+        assertTrue(integralizacaoCurricularPage.isCorrectIdentificationShown(), "User identification is not shown");
     }
 
     @Test
     public void shouldShowContentTablesTest() {
         IntegralizacaoCurricularPage integralizacaoCurricularPage = accessPage();
-        assertTrue(integralizacaoCurricularPage.areAllTablesBeingShown());
+        assertTrue(integralizacaoCurricularPage.areAllTablesBeingShown(), "Content tables is not shown");
     }
 
     private static void InitializeDriver(){

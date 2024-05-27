@@ -44,20 +44,19 @@ public class FrequenciasENotasPageTest {
     @Test
     public void shouldShowUserIdentificationTest() {
         FrequenciasENotasPage frequenciasENotasPage = accessPage();
-        assertTrue(frequenciasENotasPage.isCorrectIdentificationShown());
+        assertTrue(frequenciasENotasPage.isCorrectIdentificationShown(), "User identification is not shown");
     }
 
     @Test
     public void shouldShowContentTableTest() {
         FrequenciasENotasPage frequenciasENotasPage = accessPage();
-        assertTrue(frequenciasENotasPage.isTabelaNotasTableShown());
+        assertTrue(frequenciasENotasPage.isTabelaNotasTableShown(), "Content tables is not shown");
     }
 
     @Test
     public void shouldCreateTableWithValuesTest() {
         FrequenciasENotasPage frequenciasENotasPage = accessPage();
-        assertTrue(frequenciasENotasPage.areRowsDisplayed());
-
+        assertTrue(frequenciasENotasPage.areRowsDisplayed(), "Values in tables are not shown");
     }
 
     private static void InitializeDriver(){

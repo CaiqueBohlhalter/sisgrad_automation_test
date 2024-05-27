@@ -12,14 +12,13 @@ import pages.authPages.AuthUnespPage;
 import pages.authPages.HomePage;
 import pages.centralPage.AccessCentralPage;
 import pages.graduationSystem.GraduationSystemPage;
-import pages.graduationSystem.actionPages.HorarioAulasPage;
-import pages.graduationSystem.actionPages.IntegralizacaoCurricularPage;
+import pages.graduationSystem.actionPages.HistoricoEscolarPage;
 
 import java.util.concurrent.TimeUnit;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class HorarioAulasPageTest {
+public class HistoricoEscolarPageTest {
     private static final String ACCESS_PAGE_URL = "https://sistemas.unesp.br/central/#/sistemas";
     private static final String UNESP_ID = Dotenv.load().get("UNESP_PERSONAL_ID");
     private static final String UNESP_PASS = Dotenv.load().get("UNESP_PERSONAL_PASS");
@@ -43,14 +42,14 @@ public class HorarioAulasPageTest {
 
     @Test
     public void shouldShowUserIdentificationTest() {
-        HorarioAulasPage horarioAulasPage = accessPage();
-        assertTrue(horarioAulasPage.isCorrectIdentificationShown(), "User identification is not shown");
+        HistoricoEscolarPage historicoEscolarPage = accessPage();
+        assertTrue(historicoEscolarPage.isCorrectIdentificationShown(),"User identification is not shown");
     }
 
     @Test
     public void shouldShowContentTablesTest() {
-        HorarioAulasPage horarioAulasPage = accessPage();
-        assertTrue(horarioAulasPage.areAllTablesBeingShown(), "Content tables is not shown");
+        HistoricoEscolarPage historicoEscolarPage = accessPage();
+        assertTrue(historicoEscolarPage.isFullHistoryTableShown(), "Content tables is not shown");
     }
 
     private static void InitializeDriver(){
@@ -74,7 +73,7 @@ public class HorarioAulasPageTest {
         authPage.clickLoginButton();
     }
 
-    private HorarioAulasPage accessPage() {
+    private HistoricoEscolarPage accessPage() {
         AccessCentralPage accessCentralPage = new AccessCentralPage(driver);
         assertTrue(accessCentralPage.isCorrectPage());
 
@@ -85,9 +84,9 @@ public class HorarioAulasPageTest {
 
         graduationSystemPage.clickIntegracaoCurricular();
 
-        HorarioAulasPage horarioAulasPage = new HorarioAulasPage(driver);
-        assertTrue(horarioAulasPage.isCorrectPage());
+        HistoricoEscolarPage historicoEscolarPage = new HistoricoEscolarPage(driver);
+        assertTrue(historicoEscolarPage.isCorrectPage());
 
-        return horarioAulasPage;
+        return historicoEscolarPage;
     }
 }

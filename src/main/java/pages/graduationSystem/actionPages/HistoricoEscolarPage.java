@@ -1,5 +1,6 @@
 package pages.graduationSystem.actionPages;
 
+import io.github.cdimascio.dotenv.Dotenv;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -13,12 +14,20 @@ public class HistoricoEscolarPage {
     private static final String PAGE_TITLE = ":: UNESP : Câmpus de Rio Claro ::";
     private static final String PAGE_URL = "https://sistemas.unesp.br/academico/aluno/cadastro.historicoEscolar.action";
     private static final String DEFAULT_TITLE = "Histórico Escolar";
+    private static final String USER_FULL_NAME = Dotenv.load().get("PERSONAL_FULL_NAME");
+    private static final String USER_RA = Dotenv.load().get("PERSONAL_RA");
 
     WebDriver driver;
     WebDriverWait wait;
 
     @FindBy(xpath = "//*[@id=\"ct\"]/h2")
     WebElement title;
+
+    @FindBy(xpath = "//*[@id=\"cc\"]/div")
+    WebElement infoMsg;
+
+    @FindBy(xpath = "//*[@id=\"cc\"]/div[2]/table")
+    WebElement fullHistoryTable;
 
     public HistoricoEscolarPage(WebDriver driver){
         this.driver = driver;
@@ -37,5 +46,13 @@ public class HistoricoEscolarPage {
             return title.getText().contains(DEFAULT_TITLE);
         }
         return false;
+    }
+
+    public Boolean isCorrectIdentificationShown() {
+        return (infoMsg.getText().contains(USER_FULL_NAME) && infoMsg.getText().contains(USER_RA));
+    }
+
+    public Boolean isFullHistoryTableShown() {
+        return fullHistoryTable.isDisplayed();
     }
 }
