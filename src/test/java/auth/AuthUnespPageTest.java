@@ -44,11 +44,11 @@ public class AuthUnespPageTest {
         authPage.clickLoginButton();
 
         AccessCentralPage accessCentralPage = new AccessCentralPage(driver);
-        assertTrue(accessCentralPage.isCorrectPage());
+        assertTrue(accessCentralPage.isCorrectPage(), "Falha ao logar no sistema");
 
         accessCentralPage.logoutFromProfile();
 
-        assertTrue(authPage.isCorrectPage());
+        assertTrue(authPage.isCorrectPage(), "Falha ao realizar o Logout");
         assertTrue(authPage.isLogoutMessageShown());
     }
 

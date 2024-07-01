@@ -35,10 +35,10 @@ public class GraduationSystemPage {
     @FindBy(xpath = "//*[@id=\"menuesq\"]/li[4]/a")
     WebElement solicitacoes;
 
-    @FindBy(xpath = "//*[@id=\"menuesq\"]/li[4]/ul/li[3]/a")
+    @FindBy(xpath = "//*[@id=\"menuesq\"]/li[4]/ul/li[4]/a")
     WebElement solicitacoesDocumentos;
 
-    @FindBy(xpath = "//*[@id=\"menuesq\"]/li[4]/ul/li[3]/ul/li[1]/a")
+    @FindBy(xpath = "//*[@id=\"menuesq\"]/li[4]/ul/li[4]/ul/li[1]/a")
     WebElement solicitacoesDocumentosNovaSolicitacao;
 
     @FindBy(xpath = "//*[@id=\"menuesq\"]/li[9]/a")

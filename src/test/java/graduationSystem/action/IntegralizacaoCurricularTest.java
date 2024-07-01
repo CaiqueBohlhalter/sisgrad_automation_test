@@ -46,7 +46,8 @@ public class IntegralizacaoCurricularTest {
     @Test
     public void shouldShowContentTablesTest() {
         IntegralizacaoCurricularPage integralizacaoCurricularPage = accessPage();
-        assertTrue(integralizacaoCurricularPage.areAllTablesBeingShown(), "Content tables is not shown");
+        assertTrue(integralizacaoCurricularPage.areAllTablesBeingShown(),
+                "Content tables are not shown");
     }
 
     private static void InitializeDriver(){

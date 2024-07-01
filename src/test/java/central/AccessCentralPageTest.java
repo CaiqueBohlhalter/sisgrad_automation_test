@@ -49,7 +49,5 @@ public class AccessCentralPageTest {
 
         AccessCentralPage accessCentralPage = new AccessCentralPage(driver);
         assertTrue(accessCentralPage.isCorrectPage());
-
-        accessCentralPage.clickSisgradItem();
     }
 }
